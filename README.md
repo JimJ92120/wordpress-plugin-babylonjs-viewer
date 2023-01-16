@@ -20,8 +20,23 @@ Allow users to view and add 3D models to their content with Babylon.js Viewer.
 | `node`      | `>= 14.0` |
 
 ---
-## Installation
-(tbd)
+## How to use
+
+1. Download the `.zip` file and install **Babylon.js Viewer** plugin in WordPress.
+
+2. Activate **Babylon.js Viewer** plugin.
+
+3. Add **Babylon.js Viewer** block to a page.
+
+4. Add the model **URL** to the block.
+
+Model example:
+https://playground.babylonjs.com/scenes/BoomBox/BoomBox.gltf
+
+Video Tutorial:
+
+https://user-images.githubusercontent.com/57893611/212638558-d07e3a5d-2d9d-4524-9ddd-6d171bc3a54b.mov
+
 
 ---
 ## Development
