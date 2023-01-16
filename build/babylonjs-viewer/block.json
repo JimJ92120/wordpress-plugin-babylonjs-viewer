@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "create-block/babylonjs-viewer",
+  "version": "0.1.0",
+  "title": "Babylon.JS Viewer",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Load 3D models using Babylon.JS Viewer.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "url": {
+      "type": "string"
+    }
+  },
+  "textdomain": "babylonjs-viewer",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "babylonjs-viewer"
+}
