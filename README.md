@@ -36,4 +36,14 @@ npm install
 npm run wp-env start
 ```
 
+3. Watch `src/` directory and block files
+```sh
+npm run start
+```
+
+4. Build `src/` directory and block files for **production**
+```sh
+npm run build
+```
+
 ---
