@@ -10,3 +10,9 @@
  * Requires at least:   5.9
  * Requires PHP:        7.4
  */
+
+add_action('init', function() {
+    register_block_type(
+        plugin_dir_path(__FILE__) . 'build/babylonjs-viewer'
+    );
+});
