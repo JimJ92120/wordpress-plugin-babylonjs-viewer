@@ -10,5 +10,8 @@
   "devDependencies": {
     "@wordpress/env": "^5.9.0",
     "@wordpress/scripts": "^25.1.0"
+  },
+  "dependencies": {
+    "@wordpress/components": "^23.1.0"
   }
 }
