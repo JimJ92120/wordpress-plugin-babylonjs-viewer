@@ -10,8 +10,14 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"url": {
+			"type": "string"
+		}
+	},
 	"textdomain": "babylonjs-viewer",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"viewScript": "babylonjs-viewer"
 }
