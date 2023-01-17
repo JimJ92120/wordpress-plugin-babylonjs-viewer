@@ -5,16 +5,32 @@ import { TextControl } from '@wordpress/components';
 import './editor.scss';
 
 export default function edit({ attributes, setAttributes }) {
-	const { url } = attributes;
+	const { model } = attributes;
+	const { title, url } = model;
 
 	return (
 		<div { ...useBlockProps() }>
 			<TextControl
-				label="Model URL"
+				label="Title"
+				value={title}
+				onChange={(newValue) => {
+					setAttributes({
+						model: {
+							title: newValue,
+							url: url,
+						},
+					});
+				}}
+			/>
+			<TextControl
+				label="URL"
 				value={url}
 				onChange={(newValue) => {
 					setAttributes({
-						url: newValue,
+						model: {
+							title: title,
+							url: newValue,
+						}
 					});
 				}}
 			/>
