@@ -11,7 +11,7 @@ export default function save({ attributes }) {
 					<p>
 						{ `Loading model from "${url}"`}
 					</p>
-					<babylon model={url}></babylon>
+					<div className="babylonjs-viewer" model={url}></div>
 				</Fragment>
 			}
 			{!url &&
