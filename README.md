@@ -28,14 +28,14 @@ Allow users to view and add 3D models to their content with Babylon.js Viewer.
 
 3. Add **Babylon.js Viewer** block to a page.
 
-4. Add the model **URL** to the block.
+4. Add the model **URL** to the block or select a model from the **Media Library**.
 
 Model example:
 https://playground.babylonjs.com/scenes/BoomBox/BoomBox.gltf
 
 Video Tutorial:
 
-https://user-images.githubusercontent.com/57893611/212638558-d07e3a5d-2d9d-4524-9ddd-6d171bc3a54b.mov
+https://user-images.githubusercontent.com/57893611/212997321-70a30088-a1bd-4f7f-aa6c-1f396253ea06.mov
 
 
 ---
