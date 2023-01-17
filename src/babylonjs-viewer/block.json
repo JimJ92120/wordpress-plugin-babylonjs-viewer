@@ -11,8 +11,12 @@
 		"html": false
 	},
 	"attributes": {
-		"url": {
-			"type": "string"
+		"model": {
+			"type": "object",
+			"default": {
+				"title": "",
+				"url": ""
+			}
 		}
 	},
 	"textdomain": "babylonjs-viewer",
