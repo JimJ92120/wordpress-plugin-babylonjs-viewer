@@ -15,12 +15,4 @@ add_action('init', function() {
     register_block_type(
         plugin_dir_path(__FILE__) . 'build/babylonjs-viewer'
     );
-
-    wp_register_script(
-        'babylonjs-viewer',
-        'https://cdn.babylonjs.com/viewer/babylon.viewer.js',
-        [],
-        null,
-        true
-    );
 });
