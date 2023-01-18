@@ -68,3 +68,10 @@ npm run build
 - [WordPress](https://github.com/WordPress/)
 - [StackOverflow](https://stackoverflow.com/)
 
+---
+## Documentation
+
+- [Babylon.JS documentation](https://doc.babylonjs.com/)
+- [Babylon.JS Viewer documentation](https://doc.babylonjs.com/features/featuresDeepDive/babylonViewer)
+- [WordPress Block Editor Handbook](https://developer.wordpress.org/block-editor/)
+
