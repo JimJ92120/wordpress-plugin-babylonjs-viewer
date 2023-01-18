@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import BlockView from "./BlockView";
 import initViewer from "../scripts/initViewer";
 
-class BlockEditView extends Component {
+class EditBlockView extends Component {
   constructor(props) {
     super(props);
 
@@ -16,11 +16,11 @@ class BlockEditView extends Component {
 
   componentDidUpdate(previousProps) {
     const {
-      url: oldUrl,
-      height: oldHeight,
-      width: oldWidth,
+      model: oldModel,
+      size: oldSize,
     } = previousProps
-    const { url, height, width } = this.props;
+    const { model, size } = this.props;
+    const { url } = model;
     const { viewer } = this.state;
 
     if (this.childRef.current) {
@@ -28,45 +28,44 @@ class BlockEditView extends Component {
         this.setState({
           viewer: initViewer(this.childRef.current, url),
         });
-      } else if (url !== oldUrl) {
+      } else if (url !== oldModel.url) {
         viewer.loadModel({
           url,
         });
-      } else if (
-        height !== oldHeight
-        || width !== oldWidth
-      ) {
+      } else if (size !== oldSize) {
         viewer.engine.resize();
       }
     }
   }
 
   render() {
-    const { title, url, height, width } = this.props;
+    const { model, size } = this.props;
 
     return (
       <BlockView
         ref={this.childRef}
-        title={title}
-        url={url}
-        height={height}
-        width={width}
+        model={model}
+        size={size}
       />
     );
   }
 }
 
-BlockEditView.propTypes = {
-  title: PropTypes.string,
-  url: PropTypes.string,
-  height: {
-    type: PropTypes.number,
-    default: 0,
-  },
-  width: {
-    type: PropTypes.number,
-    default: 0,
-  },
+EditBlockView.propTypes = {
+  size: PropTypes.shape({
+    height: {
+      type: PropTypes.number,
+      default: 0,
+    },
+    width: {
+      type: PropTypes.number,
+      default: 0,
+    },
+  }),
+  model: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }),
 };
 
-export default BlockEditView;
+export default EditBlockView;
