@@ -35,7 +35,7 @@ https://playground.babylonjs.com/scenes/BoomBox/BoomBox.gltf
 
 Video Tutorial:
 
-https://user-images.githubusercontent.com/57893611/212997321-70a30088-a1bd-4f7f-aa6c-1f396253ea06.mov
+https://user-images.githubusercontent.com/57893611/213171974-18f0b380-10ba-4536-a991-e9de3e1dc5cb.mov
 
 
 ---
@@ -62,3 +62,16 @@ npm run build
 ```
 
 ---
+## Credits
+
+- [Babylon.js](https://github.com/BabylonJS)  
+- [WordPress](https://github.com/WordPress/)
+- [StackOverflow](https://stackoverflow.com/)
+
+---
+## Documentation
+
+- [Babylon.JS documentation](https://doc.babylonjs.com/)
+- [Babylon.JS Viewer documentation](https://doc.babylonjs.com/features/featuresDeepDive/babylonViewer)
+- [WordPress Block Editor Handbook](https://developer.wordpress.org/block-editor/)
+
