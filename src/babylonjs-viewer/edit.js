@@ -3,16 +3,12 @@ import {
   useBlockProps,
   MediaUpload,
   BlockControls,
-  InspectorControls,
 } from "@wordpress/block-editor";
 import {
   TextControl,
   Button,
   ToolbarGroup,
   ToolbarButton,
-  Panel,
-  PanelBody,
-  PanelRow,
 } from "@wordpress/components";
 import { Fragment, useState } from "@wordpress/element"
 import {
@@ -21,6 +17,7 @@ import {
 
 import "./editor.scss";
 import BlockEditView from "./components/BlockEditView";
+import EditInspectorControls from "./components/EditInspectorControls";
 
 export default function edit({ attributes, setAttributes }) {
   const { model, size } = attributes;
@@ -102,44 +99,26 @@ export default function edit({ attributes, setAttributes }) {
           </Fragment>
         </Fragment>
       }
-      <InspectorControls key="setting">
-        <Panel header="Viewer Settings">
-          <PanelBody title="Dimensions" initialOpen={true}>
-            <PanelRow>
-              <TextControl
-                label="Height"
-                type="number"
-                value={height}
-                onChange={(newValue) => {
-                  setAttributes({
-                    size: {
-                      height: newValue,
-                      width,
-                    },
-                  });
-                }}
-              />
-              PX
-            </PanelRow>
-            <PanelRow>
-              <TextControl
-                label="Width"
-                type="number"
-                value={width}
-                onChange={(newValue) => {
-                  setAttributes({
-                    size: {
-                      height,
-                      width: newValue,
-                    },
-                  });
-                }}
-              />
-              PX
-            </PanelRow>
-          </PanelBody>
-        </Panel>
-      </InspectorControls>
+      <EditInspectorControls
+        height={height}
+        width={width}
+        onHeightChange={(newValue) => {
+          setAttributes({
+            size: {
+              height: newValue,
+              width,
+            },
+          });
+        }}
+        onWidthChange={(newValue) => {
+          setAttributes({
+            size: {
+              height,
+              width: newValue,
+            },
+          });
+        }}
+      />
       <BlockEditView
         title={title}
         url={url}
