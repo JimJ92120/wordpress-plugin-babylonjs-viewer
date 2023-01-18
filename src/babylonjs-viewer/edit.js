@@ -53,8 +53,7 @@ export default function edit({ attributes, setAttributes }) {
         }}
       />
       <EditBlockView
-        title={title}
-        url={url}
+        model={model}
         height={height}
         width={width}
       />
