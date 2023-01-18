@@ -1,4 +1,4 @@
-import { Component, createRef, Fragment } from "@wordpress/element";
+import { Component, createRef } from "@wordpress/element";
 import PropTypes from "prop-types";
 
 import BlockView from "./BlockView";

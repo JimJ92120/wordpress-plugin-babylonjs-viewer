@@ -3,7 +3,7 @@ import { useBlockProps } from "@wordpress/block-editor";
 
 import "./editor.scss";
 
-import BlockEditView from "./components/BlockEditView";
+import EditBlockView from "./components/EditBlockView";
 import EditInspectorControls from "./components/EditInspectorControls";
 import EditBlockControls from "./components/EditBlockControls";
 
@@ -52,7 +52,7 @@ export default function edit({ attributes, setAttributes }) {
           });
         }}
       />
-      <BlockEditView
+      <EditBlockView
         title={title}
         url={url}
         height={height}
