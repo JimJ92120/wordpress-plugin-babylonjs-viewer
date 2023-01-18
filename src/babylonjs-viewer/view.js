@@ -1,23 +1,14 @@
-import * as BabylonViewer from "babylonjs-viewer";
+import initViewer from "./scripts/initViewer";
 
 addEventListener("DOMContentLoaded", () => {
   const $blockList = document.getElementsByClassName("babylonjs-viewer");
 
   Object.keys($blockList).map((index) => {
     const $block = $blockList[index];
-    const model = $block.getAttribute("model");
+    const modelUrl = $block.getAttribute("model");
     
-    if (model && "" !== model) { 
-      new BabylonViewer.DefaultViewer($block, {
-        camera: {
-          behaviors: {
-            autoRotate: 0,
-          },
-        },
-        model: {
-          url: model,
-        },
-      });
+    if (modelUrl && "" !== modelUrl) { 
+      initViewer($block, modelUrl);
     }
   });
 });
