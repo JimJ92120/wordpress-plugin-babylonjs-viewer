@@ -62,3 +62,9 @@ npm run build
 ```
 
 ---
+## Credits
+
+- [Babylon.js](https://github.com/BabylonJS)  
+- [WordPress](https://github.com/WordPress/)
+- [StackOverflow](https://stackoverflow.com/)
+
