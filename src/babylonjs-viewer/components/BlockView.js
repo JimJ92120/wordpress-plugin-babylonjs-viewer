@@ -21,7 +21,9 @@ const BlockView = forwardRef(({ model, size }, ref) => {
           <p>
             Rendering <b>{title}</b> from <em>{url}</em>
           </p>
-          <div ref={ref} className="babylonjs-viewer" model={url} style={inlineStyle}></div>
+          <div ref={ref} className="babylonjs-viewer" model={url} style={inlineStyle}>
+            <div className="babylonjs-viewer__container"></div>
+          </div>
         </Fragment>
       }
       {!url &&
