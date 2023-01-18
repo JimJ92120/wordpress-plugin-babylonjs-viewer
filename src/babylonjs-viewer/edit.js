@@ -3,22 +3,29 @@ import {
   useBlockProps,
   MediaUpload,
   BlockControls,
+  InspectorControls,
 } from "@wordpress/block-editor";
 import {
   TextControl,
   Button,
   ToolbarGroup,
   ToolbarButton,
+  Panel,
+  PanelBody,
+  PanelRow,
 } from "@wordpress/components";
 import { Fragment, useState } from "@wordpress/element"
-import { edit as editIcon } from '@wordpress/icons';
+import {
+  edit as editIcon,
+} from '@wordpress/icons';
 
 import "./editor.scss";
 import BlockEditView from "./components/BlockEditView";
 
 export default function edit({ attributes, setAttributes }) {
-  const { model } = attributes;
+  const { model, size } = attributes;
   const { title, url } = model;
+  const { height, width } = size;
 
   const [showEdit, setShowEdit] = useState(true);
 
@@ -95,9 +102,49 @@ export default function edit({ attributes, setAttributes }) {
           </Fragment>
         </Fragment>
       }
+      <InspectorControls key="setting">
+        <Panel header="Viewer Settings">
+          <PanelBody title="Dimensions" initialOpen={true}>
+            <PanelRow>
+              <TextControl
+                label="Height"
+                type="number"
+                value={height}
+                onChange={(newValue) => {
+                  setAttributes({
+                    size: {
+                      height: newValue,
+                      width,
+                    },
+                  });
+                }}
+              />
+              PX
+            </PanelRow>
+            <PanelRow>
+              <TextControl
+                label="Width"
+                type="number"
+                value={width}
+                onChange={(newValue) => {
+                  setAttributes({
+                    size: {
+                      height,
+                      width: newValue,
+                    },
+                  });
+                }}
+              />
+              PX
+            </PanelRow>
+          </PanelBody>
+        </Panel>
+      </InspectorControls>
       <BlockEditView
         title={title}
         url={url}
+        height={height}
+        width={width}
       />
     </div>
   );
