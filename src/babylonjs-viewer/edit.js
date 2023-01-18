@@ -19,7 +19,7 @@ export default function edit({ attributes, setAttributes }) {
   const { model } = attributes;
   const { title, url } = model;
 
-  const [showEdit, setShowEdit] = useState(false);
+  const [showEdit, setShowEdit] = useState(true);
 
   return (
     <div {...useBlockProps()}>
@@ -28,6 +28,7 @@ export default function edit({ attributes, setAttributes }) {
           <ToolbarButton
             icon={editIcon}
             label="Edit"
+            isPressed={showEdit}
             onClick={() => setShowEdit(!showEdit)}
           />
         </ToolbarGroup>
