@@ -1,5 +1,6 @@
 import { useBlockProps } from "@wordpress/block-editor";
-import { Fragment } from "@wordpress/element";
+
+import BlockView from "./components/BlockView";
 
 export default function save({ attributes }) {
   const { model } = attributes;
@@ -7,19 +8,10 @@ export default function save({ attributes }) {
 
   return (
     <div { ...useBlockProps.save() }>
-      {(url && url !== "") &&
-        <Fragment>
-          <p>
-            Rendering <b>{title}</b> from <em>{url}</em>
-          </p>
-          <div className="babylonjs-viewer" model={url}></div>
-        </Fragment>
-      }
-      {!url &&
-        <p>
-          { "No URL selected" }
-        </p>
-      }
+      <BlockView
+        title={title}
+        url={url}
+      />
     </div>
   );
 }

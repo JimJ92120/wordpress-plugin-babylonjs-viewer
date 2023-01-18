@@ -14,6 +14,7 @@ import { Fragment, useState } from "@wordpress/element"
 import { edit as editIcon } from '@wordpress/icons';
 
 import "./editor.scss";
+import BlockEditView from "./components/BlockEditView";
 
 export default function edit({ attributes, setAttributes }) {
   const { model } = attributes;
@@ -94,6 +95,10 @@ export default function edit({ attributes, setAttributes }) {
           </Fragment>
         </Fragment>
       }
+      <BlockEditView
+        title={title}
+        url={url}
+      />
     </div>
   );
 }
