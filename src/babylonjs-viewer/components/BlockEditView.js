@@ -15,8 +15,12 @@ class BlockEditView extends Component {
   }
 
   componentDidUpdate(previousProps) {
-    const { url: oldUrl } = previousProps
-    const { url } = this.props;
+    const {
+      url: oldUrl,
+      height: oldHeight,
+      width: oldWidth,
+    } = previousProps
+    const { url, height, width } = this.props;
     const { viewer } = this.state;
 
     if (this.childRef.current) {
@@ -28,18 +32,25 @@ class BlockEditView extends Component {
         viewer.loadModel({
           url,
         });
+      } else if (
+        height !== oldHeight
+        || width !== oldWidth
+      ) {
+        viewer.engine.resize();
       }
     }
   }
 
   render() {
-    const { title, url } = this.props;
+    const { title, url, height, width } = this.props;
 
     return (
       <BlockView
         ref={this.childRef}
         title={title}
         url={url}
+        height={height}
+        width={width}
       />
     );
   }
@@ -48,6 +59,14 @@ class BlockEditView extends Component {
 BlockEditView.propTypes = {
   title: PropTypes.string,
   url: PropTypes.string,
+  height: {
+    type: PropTypes.number,
+    default: 0,
+  },
+  width: {
+    type: PropTypes.number,
+    default: 0,
+  },
 };
 
 export default BlockEditView;
