@@ -100,8 +100,7 @@ export default function edit({ attributes, setAttributes }) {
         </Fragment>
       }
       <EditInspectorControls
-        height={height}
-        width={width}
+        size={size}
         onHeightChange={(newValue) => {
           setAttributes({
             size: {

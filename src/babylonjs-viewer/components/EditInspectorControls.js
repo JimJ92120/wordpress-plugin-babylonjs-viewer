@@ -5,14 +5,16 @@ import {
   PanelBody,
   PanelRow,
 } from "@wordpress/components";
+import PropTypes from "prop-types";
 
-export default function EditInspectorControls(props) {
+function EditInspectorControls(props) {
   const {
-    height,
-    width,
+    size,
     onHeightChange,
     onWidthChange,
   } = props
+  const { height, width } = size;
+
   return (
     <InspectorControls key="setting">
       <Panel header="Viewer Settings">
@@ -40,3 +42,17 @@ export default function EditInspectorControls(props) {
     </InspectorControls>
   );
 }
+
+EditInspectorControls.propTypes = {
+  size: {
+    type: PropTypes.object,
+    default: {
+      height: 0,
+      width: 0,
+    },
+  },
+  onHeightChange: PropTypes.func,
+  onWidthChange: PropTypes.func,
+};
+
+export default EditInspectorControls;
