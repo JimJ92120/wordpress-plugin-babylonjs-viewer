@@ -52,7 +52,7 @@ function EditBlockControls(props) {
                       onClick={open}
                       variant="link"
                       style={{
-                        color: "white",
+                        color: "inherit",
                         padding: 0,
                         fontSize: "inherit",
                       }}
