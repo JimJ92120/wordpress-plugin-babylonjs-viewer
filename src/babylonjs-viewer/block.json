@@ -17,6 +17,13 @@
         "title": "",
         "url": ""
       }
+    },
+    "size": {
+      "type": "object",
+      "default": {
+        "height": 0,
+        "width": 0
+      }
     }
   },
   "textdomain": "babylonjs-viewer",
