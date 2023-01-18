@@ -54,8 +54,7 @@ export default function edit({ attributes, setAttributes }) {
       />
       <EditBlockView
         model={model}
-        height={height}
-        width={width}
+        size={size}
       />
     </div>
   );

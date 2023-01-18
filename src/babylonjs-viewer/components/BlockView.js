@@ -1,8 +1,9 @@
 import { forwardRef, Fragment } from "@wordpress/element";
 import PropTypes from "prop-types";
 
-const BlockView = forwardRef(({ model, height, width }, ref) => {
+const BlockView = forwardRef(({ model, size }, ref) => {
   const { title, url } = model;
+  const { height, width } = size;
   const inlineStyle = {};
 
   if (height > 0) {
@@ -33,14 +34,16 @@ const BlockView = forwardRef(({ model, height, width }, ref) => {
 });
 
 BlockView.propTypes = {
-  height: {
-    type: PropTypes.number,
-    default: 0,
-  },
-  width: {
-    type: PropTypes.number,
-    default: 0,
-  },
+  size: PropTypes.shape({
+    height: {
+      type: PropTypes.number,
+      default: 0,
+    },
+    width: {
+      type: PropTypes.number,
+      default: 0,
+    },
+  }),
   model: PropTypes.shape({
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,

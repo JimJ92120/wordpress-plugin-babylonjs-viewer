@@ -17,10 +17,9 @@ class EditBlockView extends Component {
   componentDidUpdate(previousProps) {
     const {
       model: oldModel,
-      height: oldHeight,
-      width: oldWidth,
+      size: oldSize,
     } = previousProps
-    const { model, height, width } = this.props;
+    const { model, size } = this.props;
     const { url } = model;
     const { viewer } = this.state;
 
@@ -33,38 +32,36 @@ class EditBlockView extends Component {
         viewer.loadModel({
           url,
         });
-      } else if (
-        height !== oldHeight
-        || width !== oldWidth
-      ) {
+      } else if (size !== oldSize) {
         viewer.engine.resize();
       }
     }
   }
 
   render() {
-    const { model, height, width } = this.props;
+    const { model, size } = this.props;
 
     return (
       <BlockView
         ref={this.childRef}
         model={model}
-        height={height}
-        width={width}
+        size={size}
       />
     );
   }
 }
 
 EditBlockView.propTypes = {
-  height: {
-    type: PropTypes.number,
-    default: 0,
-  },
-  width: {
-    type: PropTypes.number,
-    default: 0,
-  },
+  size: PropTypes.shape({
+    height: {
+      type: PropTypes.number,
+      default: 0,
+    },
+    width: {
+      type: PropTypes.number,
+      default: 0,
+    },
+  }),
   model: PropTypes.shape({
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
