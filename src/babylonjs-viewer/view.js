@@ -5,9 +5,9 @@ addEventListener("DOMContentLoaded", () => {
 
   Object.keys($blockList).map((index) => {
     const $block = $blockList[index];
-    const modelUrl = $block.getAttribute("model");
-    
-    if (modelUrl && "" !== modelUrl) { 
+    const modelUrl = $block.getAttribute("data-model");
+
+    if (modelUrl && "" !== modelUrl) {
       initViewer($block, modelUrl);
     }
   });
