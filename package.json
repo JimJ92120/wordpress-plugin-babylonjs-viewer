@@ -12,8 +12,11 @@
     "@wordpress/scripts": "^25.1.0"
   },
   "dependencies": {
+    "@wordpress/block-editor": "^11.2.0",
+    "@wordpress/blocks": "^12.2.0",
     "@wordpress/components": "^23.1.0",
     "@wordpress/element": "^5.1.0",
+    "@wordpress/icons": "^9.16.0",
     "babylonjs-viewer": "^5.42.2"
   }
 }
