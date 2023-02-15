@@ -11,7 +11,7 @@ import {
 import { Fragment, useState } from "@wordpress/element"
 import {
   edit as editIcon,
-} from '@wordpress/icons';
+} from "@wordpress/icons";
 import PropTypes from "prop-types";
 
 function EditBlockControls(props) {
