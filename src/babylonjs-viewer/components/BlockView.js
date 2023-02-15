@@ -21,8 +21,8 @@ const BlockView = forwardRef(({ model, size }, ref) => {
           <div
             ref={ref}
             className="babylonjs-viewer"
-            model={url}
             style={inlineStyle}
+            data-model={url}
             data-title={title}
           >
             <div className="babylonjs-viewer__container"></div>
